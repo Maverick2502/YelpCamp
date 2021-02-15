@@ -19,6 +19,7 @@ db.once("open", () => {
 
 const app = express();
 
+// use ejs-locals for all ejs templates:
 app.engine('ejs', engine);
 
 app.set('view engine', 'ejs');
@@ -71,7 +72,7 @@ app.delete("/campgrounds/:id", async (req, res) => {
 
 //Place at the end!!!
 app.use((req, res) => {
-    res.status(404).send("NOT FOUND")
+    res.status(404).render("campgrounds/404")
 });
 
 app.listen(3000, () => {
