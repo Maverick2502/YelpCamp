@@ -48,9 +48,8 @@ app.post("/campgrounds", async (req, res, next) => {
         await campground.save();
         res.redirect(`/campgrounds/${campground._id}`)
     } catch (e) {
-        next(e)
+        next(e);
     }
-
 });
 
 app.get("/campgrounds/:id", async (req, res) => {
@@ -81,9 +80,10 @@ app.use((req, res) => {
 });
 
 app.use((err, req, res, next) => {
-    res.send("Something went wrong!")
-})
+    res.send("Oh Boy, something WENT WRONG");
+    console.log("ERROR!!!!!!");
+});
 
 app.listen(3000, () => {
     console.log("Your server is up and running");
-});
+}); 
