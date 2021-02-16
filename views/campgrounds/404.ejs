@@ -1,13 +1,16 @@
 <% layout("layouts/boilerplate")%>
 
-<figure>
-    <blockquote class="blockquote">
-        <h1>Unfotunetely, the page you're looking for wasn't found</h1>
-        <span class="btn btn-dark btn-lg">404</span>
-        
-    </blockquote>
-    <br>
-    <figcaption class="blockquote-footer">
-        Someone that you're going to hate now :(
-    </figcaption>
-</figure>
+<div class="grid">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="alert alert-danger" role="alert">
+                <h4 class="alert-heading"><%=err.message %></h4>
+                <p>The page you're looking for doesn't exit or another error occured.</p>
+                <p>Go back, or head over to <a class="btn btn-secondary stretched-link" href="/campgrounds">Campgrounds</a> to choose a new direction.</p>
+                <hr>
+                <small class="blockquote-footer mb-0">Someone that you're going to hate now :(</small>
+            </div>
+        </div>
+    </div>
+</div>
+
