@@ -1,10 +1,8 @@
 const express = require("express");
 const router = express.Router();
-
 const catchAsync = require("../utils/catchAsync");
 const { campgroundSchema, reviewSchema } = require("../schemas");
 const ExpressError = require("../utils/ExpressError");
-
 const Campground = require("../models/campground");
 const Review = require("../models/review");
 
@@ -30,6 +28,7 @@ router.get("/new", (req, res) => {
 router.post("/", validateCampground, catchAsync(async (req, res, next) => {
     const campground = new Campground(req.body.campground);
     await campground.save();
+    req.flash("success", "Successfully made a new campground!")
     res.redirect(`/campgrounds/${campground._id}`)
 }));
 
