@@ -1,5 +1,9 @@
 const express = require("express");
+
+ //expressRouter keeps params separately, 
+ //so as not to let it happen we should merge params
 const router = express.Router({ mergeParams: true });
+
 const catchAsync = require("../utils/catchAsync");
 const ExpressError = require("../utils/ExpressError");
 const { campgroundSchema, reviewSchema } = require("../schemas")
