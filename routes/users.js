@@ -5,16 +5,16 @@ const User = require("../models/user");
 const passport = require("passport");
 const users = require("../controllers/users");
 
-router.get("/register", users.renderRegister);
-
-router.post("/register", catchAsync(users.register));
-
-router.get("/login", users.renderLogin);
-
-router.post("/login", passport.authenticate("local", { 
+router.route("/register")
+    .get(users.renderRegister)
+    .post(catchAsync(users.register))
+    
+router.route("/login")
+    .get(users.renderLogin)
+    .post(passport.authenticate("local", { 
     failureRedirect: "/login" ,
     failureFlash: "Invalid username or password."
-}), users.login);
+}), users.login)
 
 router.get("/logout", users.logout)
 
