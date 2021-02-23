@@ -35,18 +35,18 @@ paint: {
 'step',
 ['get', 'point_count'],
 '#51bbd6',
-100,
-'#f1f075',
-750,
+10,
+'teal',
+30,
 '#f28cb1'
 ],
 'circle-radius': [
 'step',
 ['get', 'point_count'],
 20,
-100,
 30,
-750,
+30,
+250,
 40
 ]
 }
