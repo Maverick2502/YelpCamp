@@ -32,17 +32,17 @@ const seedDB = async () => {
             description: "Such a wonderful view.",
             price,
             geometry : { 
-                coordinates : [ -105.277356, 40.015417 ], 
-                type : "Point" 
+                type : "Point",
+                coordinates : [ -105.277356, 40.015417 ]
                 },
             images: [
                 {
-                    url: 'https://res.cloudinary.com/gafcu16/image/upload/v1613983194/YelpCamp/rkykngsysoxkeso7hsk1.jpg',
-                    filename: 'YelpCamp/rkykngsysoxkeso7hsk1'
+                    url: 'https://res.cloudinary.com/gafcu16/image/upload/v1614066487/YelpCamp/Sunshine_Camground_ewzuqu.jpg',
+                    filename: 'YelpCamp/t7alaivcvjklzpfl50dr'
                 },
                 {
-                    url: 'https://res.cloudinary.com/gafcu16/image/upload/v1613983196/YelpCamp/y5ninsgzpsfre1rhzw0v.jpg',
-                    filename: 'YelpCamp/y5ninsgzpsfre1rhzw0v'
+                    url: 'https://res.cloudinary.com/gafcu16/image/upload/v1614071235/YelpCamp/xvrtjewlf6rjlvbj6u5o.jpg',
+                    filename: 'YelpCamp/xvrtjewlf6rjlvbj6u5o'
                 }
             
             ]
