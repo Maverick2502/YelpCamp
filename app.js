@@ -1,7 +1,6 @@
 if (process.env.NODE_ENV !== "production") {
     require("dotenv").config();
 }
-console.log(process.env.SECRET);
 
 const express = require("express");
 const path = require("path");
@@ -24,9 +23,7 @@ const reviewRoutes = require("./routes/reviews");
 // const session = require('express-session');
 const MongoStore = require('connect-mongo').default;
 
-// const dbUrl = process.env.DB_URL;
-
-const dbUrl = 'mongodb://localhost:27017/yelp-camp'
+const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/yelp-camp';
 
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
@@ -55,16 +52,18 @@ app.use(express.static(path.join(__dirname, "public")));
 // To remove data, use:
 app.use(mongoSanitize());
 
+const secret = process.env.SECRET || "keep coding";
+
 const store = MongoStore.create({
     mongoUrl: dbUrl,
-    secret: "keep coding",
+    secret,
     touchAfter: 24 * 60 * 60
 });
 
 const sessionConfig = {
     store,
     name: "_asht",
-    secret: "maverick2502",
+    secret,
     resave: false,
     saveUninitialized: true,
     cookie: {
