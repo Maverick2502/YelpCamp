@@ -114,6 +114,8 @@ app.use((err, req, res, next) => {
     res.status(statusCode).render("campgrounds/404", { err });
 });
 
-app.listen(3000, () => {
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
     console.log("Your server is up and running");
 }); 
