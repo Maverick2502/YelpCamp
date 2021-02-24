@@ -21,7 +21,14 @@ const userRoutes = require("./routes/users")
 const campgroundRoutes = require("./routes/campgrounds");
 const reviewRoutes = require("./routes/reviews");
 
-mongoose.connect('mongodb://localhost:27017/yelp-camp', {
+// const session = require('express-session');
+const MongoStore = require('connect-mongo').default;
+
+// const dbUrl = process.env.DB_URL;
+
+const dbUrl = 'mongodb://localhost:27017/yelp-camp'
+
+mongoose.connect(dbUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useUnifiedTopology: true,
@@ -48,7 +55,14 @@ app.use(express.static(path.join(__dirname, "public")));
 // To remove data, use:
 app.use(mongoSanitize());
 
+const store = MongoStore.create({
+    mongoUrl: dbUrl,
+    secret: "keep coding",
+    touchAfter: 24 * 60 * 60
+});
+
 const sessionConfig = {
+    store,
     name: "_asht",
     secret: "maverick2502",
     resave: false,
