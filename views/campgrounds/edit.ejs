@@ -48,14 +48,18 @@
                                 <img src="<%=img.thumbnail %>" class="img-thumbnail" alt="">
                                 <div class="form-check-inline">
                                     <input type="checkbox" id="image-<%=i%>" name="deleteImages[]" value="<%=img.filename%>">
+                            <button class="btn btn-danger d-block" for="image-<%=i%>">Delete</button>
+
                                 </div>
-                                <label for="image-<%=i%>">Delete?</label>
+                                    <!-- <label class="btn" for="image-<%=i%>">Delete?</label> -->
+                            <!-- <button class="btn btn-danger d-block" for="image-<%=i%>">Delete</button> -->
+
                                 <% })%>
                         </div>
                         <div class="mb-3">
                             <button class="btn btn-success">Update Campground</button>
+                            <a class="btn btn-secondary" href="/campgrounds/<%= campground._id%>">Back to campground</a>
                         </div>
                     </form>
-                    <a href="/campgrounds/<%= campground._id%>">Back to campground</a>
                 </div>
             </div>
