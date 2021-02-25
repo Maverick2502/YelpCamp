@@ -25,8 +25,9 @@
 
 ### Front-end
 
+* HTML/CSS/JS
 * [ejs](http://ejs.co/)
-* [Bootstrap](https://getbootstrap.com/docs/3.3/)
+* [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
 
 ### Back-end
 
